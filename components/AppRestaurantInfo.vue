@@ -1,8 +1,8 @@
 <template>
   <section class="restaurantinfo">
-    <div v-for="store in fooddata" :key="store.id">
+    <div v-for="store in datasource" :key="store.id">
       <h2>{{ store.name }}</h2>
-      <p>Delivery Time{{ store.deliveryTime }}</p>
+      <p>Delivery Time {{ store.deliveryTime }}</p>
       <p>Rating {{ store.rating }}</p>
       <p v-if="store.freeDelivery" class="label">
         <span>Free Delivery</span>
@@ -11,13 +11,13 @@
         <div
           v-for="menuitem in store.menu"
           :key="menuitem.id"
+          :style="`background: url(/${menuitem.img}) no-repeat center center`"
           class="items"
-          :style="`background: url(${menuitem.img}) no-repeat center center`"
         >
           <div class="iteminfo">
             <div>
               <h4>{{ menuitem.item }}</h4>
-              <p>{{priceFormating(menuitem.price)}}</p>
+              <p>{{ priceFormatting(menuitem.price) }}</p>
             </div>
             <button class="ghost">View Item ></button>
           </div>
@@ -28,17 +28,17 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
-  computed: {
-    ...mapState(["fooddata"]),
+  props: {
+    datasource: {
+      type: [Array, Object],
+    },
   },
   methods: {
-    priceFormating(item){
-      return '$' + item.toFixed(2)
-    }
-  }
+    priceFormatting(item) {
+      return "$" + item.toFixed(2);
+    },
+  },
 };
 </script>
 
