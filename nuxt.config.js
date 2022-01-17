@@ -15,31 +15,29 @@ export default {
    */
   head: {
     title: "Nuxt Food App",
-    meta: [
-      {
-        charset: "utf-8",
+    meta: [{
+        charset: "utf-8"
       },
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1",
+        content: "width=device-width, initial-scale=1"
       },
       {
         hid: "description",
         name: "description",
-        content: "Demo of Nuxt and Vue",
-      },
+        content: "Demo of Nuxt and Vue"
+      }
     ],
-    link: [
-      {
+    link: [{
         rel: "icon",
         type: "image/x-icon",
-        href: "/favicon.ico",
+        href: "/favicon.ico"
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Poppins:wght@600&display=swap",
-      },
-    ],
+        href: "https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Poppins:wght@600&display=swap"
+      }
+    ]
   },
   /*
    ** Global CSS
@@ -49,7 +47,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [`~/plugins/getfood.server.js`],
+  plugins: ["~/plugins/getfood.server.js"],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -67,5 +65,5 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {}
 };
